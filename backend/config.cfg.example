@@ -1,0 +1,51 @@
+SQLALCHEMY_DATABASE_URI = 'mysql://user:passwd@host/scheme'
+SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+FCM_APIKEY = ''
+
+
+TOAST_CLOUD_APP_KEY = ''
+SMS_SENDER_NO = ''
+
+
+PASSWORD_SALT = ''
+
+
+DEBUG = True
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '%(asctime)s - [%(levelname)s] %(pathname)s[%(lineno)d] pid:%(process)d: %(message)s',
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        }
+    },
+    'handlers': {
+        'root': {
+            'class': 'logging.handlers.TimedRotatingFileHandler',
+            'formatter': 'verbose',
+            'filename': '/home/ubuntu/log/kook.log',
+            'when': 'midnight',
+        },
+        'splunk': {
+            'class': 'logging.handlers.SysLogHandler',
+            'level': 'INFO',
+            'address': '/dev/log',
+            'facility': 'local0',
+            'formatter': 'splunk',
+        },
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple'
+        },
+    },
+    'root': {
+        'handlers': ['root'],
+        'level': 'INFO'
+    },
+}

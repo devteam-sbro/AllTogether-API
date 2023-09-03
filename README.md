@@ -1,2 +1,2 @@
-# AllTogether-API
-AllTogether backend
+# all-server
+all-server
