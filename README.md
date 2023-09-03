@@ -1,0 +1,2 @@
+# AllTogether-API
+AllTogether backend
